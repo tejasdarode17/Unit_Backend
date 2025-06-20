@@ -126,8 +126,9 @@ async function googleAuth(req, res) {
 
     try {
 
-        const { accessToken } = req.body
-        const response = await getAuth().verifyIdToken(accessToken);
+        const { idToken} = req.body
+
+        const response = await getAuth().verifyIdToken(idToken);
 
         const { name, email, picture, } = response
 
